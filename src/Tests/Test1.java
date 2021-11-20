@@ -14,7 +14,7 @@ class Test1 {
 	void test() throws FileNotFoundException, InterruptedException {
 		GestorAutomata gestor=new GestorAutomata();
 		gestor.leerArchivoInput(".\\Archivos\\automata.txt");
-		gestor.ejecutar("aaaaaaaabaaaaabcbcbcbcbcdbdbdbdbdbcacacacaabcd");
+		//gestor.ejecutar("aaaaaaaabaaaaabcbcbcbcbcdbdbdbdbdbcacacacaabcd");
 		
 		gestor.crearTablaAFNDe();
 
@@ -27,10 +27,10 @@ class Test1 {
 	
 	
 	@Test
-	void test2() throws FileNotFoundException, InterruptedException {
+  void test2() throws FileNotFoundException, InterruptedException {
 		GestorAutomata gestor=new GestorAutomata();
 		gestor.leerArchivoInput(".\\Archivos\\automata.txt");
-		gestor.ejecutar("aaaaaaaabaaaaabcbcbcbcbcdbdbdbdbdbcacacacaabcd");
+	//	gestor.ejecutar("aaaaaaaabaaaaabcbcbcbcbcdbdbdbdbdbcacacacaabcd");
 		
 		gestor.crearTablaAFNDe();
 
@@ -38,5 +38,22 @@ class Test1 {
 		assertTrue(gestor.ejecutar2("abbbbbbbb"));
 
 	    assertTrue(gestor.ejecutar2("d"));
+	}
+	
+	
+	
+	
+	
+	@Test
+	void test3() throws FileNotFoundException, InterruptedException {
+		GestorAutomata gestor=new GestorAutomata();
+		gestor.leerArchivoInput(".\\Archivos\\automata2.txt");
+		//gestor.ejecutar("aaaaaaaabaaaaabcbcbcbcbcdbdbdbdbdbcacacacaabcd");
+		
+		gestor.crearTablaAFNDe();
+
+	    gestor.crearTablaAFD1();
+		assertTrue(gestor.ejecutar2("abbbbbbbb"));
+
 	}
 }

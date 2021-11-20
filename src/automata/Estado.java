@@ -26,8 +26,27 @@ public class Estado {
         final Estado other = (Estado)obj;
 
         if (other.nombre == null) return false;
-        if (this.nombre.compareTo(other.nombre)!=0) return false;
+       // if (this.nombre.compareTo(other.nombre)!=0) return false;
         if(this.esFinal!=other.esFinal) return false;
+        
+
+        String []p=this.nombre.split(",");
+        
+        for(int i=0;i<p.length;i++)
+		{
+			if(!other.nombre.contains(p[i]))
+				return false;
+				
+		}
+        
+        String []t=other.nombre.split(",");
+        
+        for(int i=0;i<t.length;i++)
+      		{
+      			if(!this.nombre.contains(t[i]))
+      				return false;
+      				
+      		}
         return true;
     }
 
