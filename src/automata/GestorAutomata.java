@@ -398,7 +398,7 @@ return clausura;
 		for (int i=0;i<alfabeto.length-1;i++) {
 			
 			estado2="";
-			estado2=devolverEstadoAFDdadoelEstadoAFNDe(devolverinicial(estado,alfabeto[i]));
+			estado2=devolverEstadoAFDdadoelEstadoAFNDe(devolverEstadosHastaDadounConjuntoDesEstados(estado,alfabeto[i]));
 	    	transicionesxcaracter.add(estado2);
 
 			System.out.println("estadoalqueva:"+estado2+"estado"+estado+"alf:"+alfabeto[i]);
@@ -431,14 +431,14 @@ return clausura;
 
 	//devuelve los estados a los que va si viene tal caracter y un conjunto de estados
 	//segun la tabla AFNDE 
-	public List<String> devolverinicial(String estadosnuevos,String caracter)
+	public List<String> devolverEstadosHastaDadounConjuntoDesEstados(String estadosnuevos,String caracter)
 	{
 	List<String>lista=new ArrayList<String>();
 	String []estados_n=estadosnuevos.split(",");
 		for(int i=0;i<estados_n.length;i++)
 		{
 
-			List<String> l=devolver(estados_n[i],caracter);
+			List<String> l=devolverEstadoHasta(estados_n[i],caracter);
 			
 			if(!l.contains("0"))
 				lista.addAll(l);
@@ -456,7 +456,7 @@ return clausura;
 	}
 	
 	//devuelve a los estados a los que puede ir cuando venga tal caracter, estando en cierto estado 
-	public List<String>devolver(String estado,String caracter)
+	public List<String>devolverEstadoHasta(String estado,String caracter)
 	{
 		List<String> lista=new ArrayList<String>();
 		 for (int i=0;i<tabla.size();i++) {
