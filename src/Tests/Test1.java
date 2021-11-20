@@ -19,7 +19,7 @@ class Test1 {
 		gestor.crearTablaAFNDe();
 
 		gestor.crearTablaAFD1();
-		assertTrue(gestor.ejecutar2("a"));
+		assertTrue(gestor.ejecutar2("abbbbb"));
 
 		assertTrue(gestor.ejecutar2("d"));
 	}
@@ -34,9 +34,9 @@ class Test1 {
 		
 		gestor.crearTablaAFNDe();
 
-		gestor.crearTablaAFD1();
-		assertTrue(gestor.ejecutar2("a"));
+	    gestor.crearTablaAFD1();
+		assertTrue(gestor.ejecutar2("abbbbbbbb"));
 
-		assertTrue(gestor.ejecutar2("d"));
+	    assertTrue(gestor.ejecutar2("d"));
 	}
 }

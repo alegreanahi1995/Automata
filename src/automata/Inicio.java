@@ -13,7 +13,7 @@ public class Inicio {
 		gestor.crearTablaAFNDe();
 
 		gestor.crearTablaAFD1();
-		System.out.print(gestor.ejecutar2("d"));
+		System.out.print(gestor.ejecutar2("abbb"));
 		
 	
 

@@ -298,8 +298,11 @@ return clausura;
 		String estadoInicial=clausuras.get(0);
 		nuevoEstados2=new ArrayList<Estado>();
 		nuevoEstados2.add(new Estado(estadoInicial,false));
+		ArrayList<Estado>nuevoEstados3=new ArrayList<Estado>();
+		nuevoEstados3.add(new Estado(estadoInicial,false));
+	   
 	    tablanueva=new ArrayList<List<String>> ();
-		crearTablaAFD(estadoInicial,nuevoEstados2,tablanueva);
+		crearTablaAFD(estadoInicial,nuevoEstados3,nuevoEstados2,tablanueva);
 		
 		
 		 for (int i=0;i<tablanueva.size();i++) {
@@ -380,12 +383,18 @@ return clausura;
 	
 	///crea la tabla AFD recorriendo recursivamente
 	public void crearTablaAFD(String estado,
-			ArrayList<Estado> nuevosEstados,List<List<String>> tablanueva)
+			ArrayList<Estado> nuevosEstados,ArrayList<Estado> nuevosEstados3,List<List<String>> tablanueva)
 	{
 		List<String>estadosnuevosdelestadoe=new ArrayList<String>();
 		
 		List<String>transicionesxcaracter=new ArrayList<String>();
 		String estado2="";
+
+		if(!nuevosEstados3.contains(new Estado(estado,false)))
+	     {
+			nuevosEstados3.add(new Estado(estado,false));
+	     }
+    	
 		for (int i=0;i<alfabeto.length-1;i++) {
 			
 			estado2="";
@@ -393,11 +402,11 @@ return clausura;
 	    	transicionesxcaracter.add(estado2);
 
 			System.out.println("estadoalqueva:"+estado2+"estado"+estado+"alf:"+alfabeto[i]);
-	    if(!nuevosEstados.contains(estado2) && estado2.compareTo("0")!=0)
+	    if(!nuevosEstados.contains(new Estado(estado2,false)) && estado2.compareTo("0")!=0)
 	     {
 	    	
-	    	
-	    	estadosnuevosdelestadoe.add(estado2);
+	    	System.out.println(estado2);
+	      estadosnuevosdelestadoe.add(estado2);
 	    	nuevosEstados.add(new Estado(estado2,false));
 	     }
 	    
@@ -411,7 +420,7 @@ return clausura;
 		for(int i=0;i<estadosnuevosdelestadoe.size();i++)
 		{
 
-	    	crearTablaAFD(estadosnuevosdelestadoe.get(i),nuevosEstados,tablanueva);
+	    	crearTablaAFD(estadosnuevosdelestadoe.get(i),nuevosEstados,nuevosEstados3,tablanueva);
 		}
 		
 		
