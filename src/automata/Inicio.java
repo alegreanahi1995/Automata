@@ -3,27 +3,39 @@ package automata;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Inicio {
 
 	public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 	    GestorAutomata gestor=new GestorAutomata();
-	/*	gestor.leerArchivoInput(".\\Archivos\\automata2.txt");
-		gestor.ejecutar("aaaaaaaabaaaaabcbcbcbcbcdbdbdbdbdbcacacacaabcd");
+
+		 String entradaTeclado = "";
+
+	     System.out.println ("Por favor introduzca la ubicación del archivo:");
+	     
+	     Scanner entradaEscaner = new Scanner (System.in);
+
+	     entradaTeclado = entradaEscaner.nextLine (); 
+
+		gestor.leerArchivoInput(entradaTeclado);
+		//gestor.ejecutar("aaaaaaaabaaaaabcbcbcbcbcdbdbdbdbdbcacacacaabcd");
 		
 		gestor.verificarSiEsAFD();
 		gestor.crearTablaAFNDe();
 
 		gestor.crearTablaAFD1();
-		System.out.print(gestor.ejecutar2("abbb"));
-*/
-		List<Estado> l=new ArrayList<Estado>();
 		
-		Estado e=new Estado("1,2",false);
-	        
-		l.add(e);
-		Estado p=new Estado("4,2,1",false);
-	       System.out.print(l.contains(p));
+	     entradaTeclado = "";
+	     System.out.println ("Por favor introduzca la cadena:");
+	     
+	     entradaEscaner = new Scanner (System.in);
+
+	     entradaTeclado = entradaEscaner.nextLine (); 
+		if(gestor.ejecutar2(entradaTeclado))
+			System.out.print("ACEPTA EL STRING");
+		else System.out.print("NO ACEPTA EL STRING");
+
 		
 }
 

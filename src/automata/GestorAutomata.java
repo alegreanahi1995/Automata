@@ -308,8 +308,6 @@ return clausura;
 		 for (int i=0;i<tablanueva.size();i++) {
 				for(int j=0;j<tablanueva.get(i).size();j++)
 				{
-					System.out.println("alf"+alfabeto[j]);
-					System.out.println("estado a que va"+tablanueva.get(i).get(j));
 					String caracterTemp=defTransiciones.get(i)[1].substring(0,defTransiciones.get(i)[1].indexOf("->"));
 					String estadoTemp=defTransiciones.get(i)[1].substring(defTransiciones.get(i)[1].indexOf("->")+2,defTransiciones.get(i)[1].length());
 
@@ -401,11 +399,9 @@ return clausura;
 			estado2=devolverEstadoAFDdadoelEstadoAFNDe(devolverEstadosHastaDadounConjuntoDesEstados(estado,alfabeto[i]));
 	    	transicionesxcaracter.add(estado2);
 
-			System.out.println("estadoalqueva:"+estado2+"estado"+estado+"alf:"+alfabeto[i]);
 	    if(!nuevosEstados.contains(new Estado(estado2,false)) && estado2.compareTo("0")!=0)
 	     {
 	    	
-	    	System.out.println(estado2);
 	      estadosnuevosdelestadoe.add(estado2);
 	    	nuevosEstados.add(new Estado(estado2,false));
 	     }
@@ -482,7 +478,6 @@ return clausura;
 		String cadena2="";
 		boolean primero=true;
 		for(String estado:estadosAfD ) {
-			//System.out.print(estado);
 			if(estado.compareTo("0")!=0) {
 			 cadena="";
 			 cadena+=this.obtenerClausuraEdelEstado(estado);//verificar que saque el estado mismo
