@@ -26,7 +26,6 @@ public class GestorAutomata {
 	ArrayList<String[]> defTransiciones=new ArrayList<String[]>();
 	int cantidadEstados=0;
 	ArrayList<Estado>estados=new ArrayList<Estado>();
-	ArrayList<Transicion>transiciones;
 	boolean esDeterministico=true;
 	ArrayList<Estado> nuevoEstados2;
 
