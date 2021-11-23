@@ -54,11 +54,7 @@ class Test1 {
 
 	}
 
-	
-	
-	/*Prueba1
-	 * Terminan en 01
-	 * */	
+		
 	@Test
 	public void test4() throws FileNotFoundException, InterruptedException {
 		GestorAutomata gestor=new GestorAutomata();
@@ -72,9 +68,7 @@ class Test1 {
 
 		
 	}
-	/*Prueba1
-	 * 
-	 * */	
+
 	@Test
 	public void test5() throws FileNotFoundException, InterruptedException {
 		
@@ -91,9 +85,6 @@ class Test1 {
 	}
 
 
-	/*Prueba1
-	 * No debe aceptar el 00
-	 * */	
 	@Test
 	public void test6() throws FileNotFoundException, InterruptedException {
 		
@@ -108,9 +99,7 @@ class Test1 {
 	}
 	
 	
-	/*Prueba1
-	 * No debe aceptar el 0
-	 * */	
+	
 	@Test
 	public void test7() throws FileNotFoundException, InterruptedException {
 		GestorAutomata gestor=new GestorAutomata();
@@ -122,9 +111,7 @@ class Test1 {
 
 	    assertTrue(gestor.ejecutar2("0")==false);
 	}
-	/*Prueba1
-	 * No debe aceptar el 1
-	 * */	
+
 	@Test
 	public void test8() throws FileNotFoundException, InterruptedException {
 		
@@ -137,9 +124,7 @@ class Test1 {
 
 	    assertTrue(gestor.ejecutar2("1")==false);
 	}
-	/*Prueba1
-	 * No debe aceptar el 10011
-	 * */	
+	
 	@Test
 	public void test9() throws FileNotFoundException, InterruptedException {
 		
@@ -152,8 +137,19 @@ class Test1 {
 
 	    assertTrue(gestor.ejecutar2("10011")==false);
 	}
-	/*Prueba1
-	 * No debe aceptar el 001
-	 * */	
+	
+	
+	@Test
+	public void test10() throws FileNotFoundException, InterruptedException {
+		
+		GestorAutomata gestor=new GestorAutomata();
+		gestor.leerArchivoInput(".\\Archivos\\automata3.txt");
+		
+		gestor.crearTablaAFNDe();
+
+	    gestor.crearTablaAFD1();
+
+	    assertTrue(gestor.ejecutar2("ab")==false);
+	}
 	
 }

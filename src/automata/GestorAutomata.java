@@ -89,6 +89,10 @@ public class GestorAutomata {
 	//verifica que contenga elementos validos y luego inicia el proceso para
 	//ver si acepta el string el automata
 	public boolean ejecutar2(String palabra) {
+		if(!contieneElementosValidos(palabra)) {
+			System.out.println("Ejecutar automata, todos los caracteres no pertenecen al lenguaje");
+		return false;
+		}
 	
 		return this.contieneCaracter(this.nuevoEstados2.get(0).nombre, palabra);
 		
@@ -295,6 +299,7 @@ return clausura;
 					transicion[0]= nuevoEstados2.get(i).nombre;
 					transicion[1]=" "+alfabeto[j]+" -> "+tablanueva.get(i).get(j);
 					
+		
 					defTransicionesAFD.add(transicion);
 					
 				
