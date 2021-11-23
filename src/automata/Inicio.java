@@ -19,9 +19,7 @@ public class Inicio {
 	     entradaTeclado = entradaEscaner.nextLine (); 
 
 		gestor.leerArchivoInput(entradaTeclado);
-		//gestor.ejecutar("aaaaaaaabaaaaabcbcbcbcbcdbdbdbdbdbcacacacaabcd");
 		
-		gestor.verificarSiEsAFD();
 		gestor.crearTablaAFNDe();
 
 		gestor.crearTablaAFD1();
