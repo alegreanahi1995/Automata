@@ -199,12 +199,6 @@ public class GestorAutomata {
 	}
 	
 	
-	private void esDeterministico() {
-		int cantCaracteresAlfabeto=alfabeto.length;
-		int cantEstadosTotal=cantidadEstados;
-
-		esDeterministico=true;		
-	}
 	
 	
 	//devuelve los estados a los que va si se encuentra en el estado actual y en el string sigue
